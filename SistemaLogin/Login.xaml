@@ -37,7 +37,8 @@
             </StackPanel>
         </Grid>
         <Button Background="#FF058789" Name="btnIniciarSesion" Content="Iniciar Sesión" HorizontalAlignment="Left" Height="46" Margin="441,0,0,75" VerticalAlignment="Bottom" Width="194" FontFamily="Verdana" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" Cursor="Hand" FontWeight="Bold" Click="btnIniciarSesion_Click" MouseEnter="btnIniciarSesion_MouseEnter" MouseLeave="btnIniciarSesion_MouseLeave"/>
-        <Button x:Name="btnCerrarsesion" Content="Cerrar sesión" Margin="641,384,-35,18" Background="#FF058789" FontWeight="Bold" FontSize="10" Click="btnCerrarsesion_Click" MouseEnter="btnCerrarsesion_MouseEnter" MouseLeave="btnCerrarsesion_MouseLeave"/>
+        <Button x:Name="btnCerrarsesion" Content="Cerrar Aplicación" Margin="617,379,-35,15" Background="#FF058789" FontWeight="Bold" FontSize="10" Click="btnCerrarsesion_Click" MouseEnter="btnCerrarsesion_MouseEnter" MouseLeave="btnCerrarsesion_MouseLeave"/>
+        <Button x:Name="btnRegistrarse" Content="Registrarse" Margin="380,383,202,19" Background="#FF058789" FontWeight="Bold" FontSize="10" Click="btnRegistrarse_Click"/>
 
 
     </Grid>

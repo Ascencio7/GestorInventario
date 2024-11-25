@@ -19,6 +19,9 @@ using System.Data.SqlClient;
 using MaterialDesignThemes.Wpf;
 using System.Security.Cryptography;
 //using System.Web.UI.WebControls;
+using GestorInventario.SistemaAdministrador;
+using GestorInventario.SistemaAuxiliar;
+using GestorInventario.SistemaRegistro;
 
 namespace GestorInventario.SistemaLogin
 {
@@ -123,7 +126,9 @@ namespace GestorInventario.SistemaLogin
                         break;
                     case "Auxiliar":
                         MessageBox.Show("¡Bienvenido!", "ATLA CORP | Sistema Auxiliar", MessageBoxButton.OK, MessageBoxImage.Information);
+                        frmInicioAuxiliar frmInicioAuxiliar = new frmInicioAuxiliar();
                         this.Hide();
+                        frmInicioAuxiliar.Show();
                         break;
                     default:
                         MessageBox.Show("Rol de usuario no reconocido.", "ATLAS CORP | Error de Sesión", MessageBoxButton.OK, MessageBoxImage.Exclamation);
@@ -204,6 +209,18 @@ namespace GestorInventario.SistemaLogin
         {
             // Restaurar el color original cuando el cursor sale del área del botón
             btnCerrarsesion.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnRegistrarse_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult resultado = MessageBox.Show("¿Desea registrarse en el sistema?", "ATLAS CORP | Registro", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if(resultado == MessageBoxResult.Yes)
+            {
+                frmRegistro frmRegistro = new frmRegistro();
+                this.Hide();
+                frmRegistro.Show();
+            }
         }
     }
 }
