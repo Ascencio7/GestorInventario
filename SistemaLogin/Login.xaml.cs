@@ -181,5 +181,29 @@ namespace GestorInventario.SistemaLogin
                 Application.Current.Shutdown();
             }
         }
+
+        private void btnIniciarSesion_MouseEnter(object sender, MouseEventArgs e)
+        {
+            // Cambiar el color cuando el cursor entra en el área del botón
+            btnIniciarSesion.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnIniciarSesion_MouseLeave(object sender, MouseEventArgs e)
+        {
+            // Restaurar el color original cuando el cursor sale del área del botón
+            btnIniciarSesion.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnCerrarsesion_MouseEnter(object sender, MouseEventArgs e)
+        {
+            // Cambiar el color cuando el cursor entra en el área del botón
+            btnCerrarsesion.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnCerrarsesion_MouseLeave(object sender, MouseEventArgs e)
+        {
+            // Restaurar el color original cuando el cursor sale del área del botón
+            btnCerrarsesion.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
     }
 }
