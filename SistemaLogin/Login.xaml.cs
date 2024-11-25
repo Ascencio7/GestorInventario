@@ -120,9 +120,11 @@ namespace GestorInventario.SistemaLogin
                 {
                     case "Administrador":
                         MessageBox.Show("¡Bienvenido!", "ATLA CORP | Sistema Administrador", MessageBoxButton.OK, MessageBoxImage.Information);
-                        MainWindow main = new MainWindow();
+                        frmInicioAdministrador inicioAdmin = new frmInicioAdministrador();
+                        //MainWindow main = new MainWindow()
                         this.Hide();
-                        main.Show();
+                        //main.Show();
+                        inicioAdmin.Show();
                         break;
                     case "Auxiliar":
                         MessageBox.Show("¡Bienvenido!", "ATLA CORP | Sistema Auxiliar", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -209,18 +211,6 @@ namespace GestorInventario.SistemaLogin
         {
             // Restaurar el color original cuando el cursor sale del área del botón
             btnCerrarsesion.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-
-        private void btnRegistrarse_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult resultado = MessageBox.Show("¿Desea registrarse en el sistema?", "ATLAS CORP | Registro", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if(resultado == MessageBoxResult.Yes)
-            {
-                frmRegistro frmRegistro = new frmRegistro();
-                this.Hide();
-                frmRegistro.Show();
-            }
         }
     }
 }

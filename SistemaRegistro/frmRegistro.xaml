@@ -7,7 +7,26 @@
         mc:Ignorable="d"
         Title="ATLAS CORP | REGISTRO" ResizeMode="NoResize" Background="LightGray" Height="450" Width="763" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
 
-    <Grid Background="White" Margin="0,0,47,0">
-        
+    <Grid Background="White" Margin="0,0,47,0" Cursor="">
+        <Label Content="Nombre Usuario:" HorizontalAlignment="Left" Margin="37,93,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
+        <Label Content="Correo:" HorizontalAlignment="Left" Margin="37,148,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
+        <Label Content="Contrasena:" HorizontalAlignment="Left" Margin="37,0,0,0" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="12"/>
+        <Label Content="Rol:" HorizontalAlignment="Left" Margin="46,266,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
+        <Label Content="Estado Usuario:" HorizontalAlignment="Left" Margin="46,323,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
+        <TextBox x:Name="txtNombreUsuario" Background="LightGray" HorizontalAlignment="Left" Margin="178,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444" FontFamily="Times New Roman" FontSize="12" Cursor="Hand"/>
+        <TextBox x:Name="txtCorreoUsuario" Background="LightGray" HorizontalAlignment="Left" Margin="178,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" FontFamily="Times New Roman" FontSize="12" Cursor="Hand"/>
+        <PasswordBox x:Name="txtPasswordUsuario"  Background="LightGray" HorizontalAlignment="Left" Margin="178,0,0,0" VerticalAlignment="Center" Width="421" FontFamily="Times New Roman" FontSize="12" Cursor="Hand"/>
+        <ComboBox x:Name="cbRolesUsuarios" Background="LightGray" HorizontalAlignment="Left" Margin="178,265,0,0" VerticalAlignment="Top" Width="199" FontFamily="Times New Roman" FontSize="12" Cursor="Hand">
+            <ComboBoxItem Content="Administrador" Tag="1"/>
+            <ComboBoxItem Content="Auxiliar" Tag="2"/>
+        </ComboBox>
+        <ComboBox x:Name="cbEstadosUsuarios" Background="LightGray" HorizontalAlignment="Left" Margin="178,323,0,0" VerticalAlignment="Top" Width="236" FontFamily="Times New Roman" FontSize="12" Cursor="Hand">
+            <ComboBoxItem Content="Activo" Tag="1"/>
+            <ComboBoxItem Content="Inactivo" Tag="2"/>
+        </ComboBox>
+
+        <Button x:Name="btnVolver" Content="Regresar" Margin="21,34,561,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Click="btnVolver_Click" MouseEnter="btnVolver_MouseEnter" MouseLeave="btnVolver_MouseLeave" Height="32" VerticalAlignment="Top"/>
+        <Button x:Name="btnRegistrarse" Content="Registrar" Margin="557,0,25,31" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Cursor="Hand" MouseEnter="btnRegistrarse_MouseEnter" MouseLeave="btnRegistrarse_MouseLeave" Height="32" VerticalAlignment="Bottom"/>
+
     </Grid>
 </Window>

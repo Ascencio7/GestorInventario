@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestorInventario.SistemaRegistro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,19 @@ namespace GestorInventario.SistemaAdministrador
         public frmInicioAdministrador()
         {
             InitializeComponent();
+        }
+
+        private void frPrincipal_Loaded(object sender, RoutedEventArgs e)
+        {
+            frPrincipal.NavigationService.Navigate(new Uri("SistemaAdministrador/pageBienvenidoAdmin.xaml", UriKind.Relative));
+
+        }
+
+        private void btnGestionRegistroAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            frmRegistro formRegistro = new frmRegistro();
+            this.Hide();
+            formRegistro.Show();
         }
     }
 }
