@@ -71,6 +71,7 @@
     </ApplicationDefinition>
     <Compile Include="DataAcces\ConexionDB.cs" />
     <Compile Include="ModeloUsuario\UsuariosModel.cs" />
+    <Compile Include="ServiceUsuario\DatosUsuarios.cs" />
     <Compile Include="SistemaAdministrador\frmInicioAdministrador.xaml.cs">
       <DependentUpon>frmInicioAdministrador.xaml</DependentUpon>
     </Compile>

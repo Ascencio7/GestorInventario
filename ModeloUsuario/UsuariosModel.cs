@@ -11,9 +11,12 @@ namespace GestorInventario.ModeloUsuario
         public int UserID { get; set; }
         public string NombreUsuario { get; set; }
         public string Correo {  get; set; }
-        public byte[] Contra { get; set; }
+        public string Contra { get; set; }
         public int RolID { get; set; }
+        public string Rol {  get; set; }
+
         public int EstadoID { get; set; }
+        public string Estado { get; set; }
 
         public UsuariosModel() { }
     }
