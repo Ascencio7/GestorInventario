@@ -78,6 +78,9 @@
     <Compile Include="SistemaAdministrador\pageBienvenidoAdmin.xaml.cs">
       <DependentUpon>pageBienvenidoAdmin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SistemaAdministrador\UsuariosInactivosAdmin.xaml.cs">
+      <DependentUpon>UsuariosInactivosAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SistemaAuxiliar\frmInicioAuxiliar.xaml.cs">
       <DependentUpon>frmInicioAuxiliar.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SistemaAdministrador\pageBienvenidoAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SistemaAdministrador\UsuariosInactivosAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,9 +173,6 @@
     <Resource Include="inventario.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SistemaAdministrador\inventario.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="SistemaAuxiliar\inventario.png" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +181,18 @@
   <ItemGroup>
     <Resource Include="Imagenes\registro.png" />
     <Resource Include="Imagenes\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\usuarioInactivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SistemaAdministrador\inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\cerrarApp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

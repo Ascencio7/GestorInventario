@@ -181,7 +181,7 @@ namespace GestorInventario.SistemaLogin
         private void btnCerrarsesion_Click(object sender, RoutedEventArgs e)
         {
             // Mensaje para estar seguro si desea salir o no
-            MessageBoxResult resultado = MessageBox.Show("¿Seguro que quiere cerrar sesión?", "HOSPI PLUS | Cerrar Sesión", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult resultado = MessageBox.Show("¿Seguro que quiere cerrar la aplicación?", "ATLAS CORP | CERRAR APLIACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question);
             // Si es así, se cierra la app
             if (resultado == MessageBoxResult.Yes)
             {

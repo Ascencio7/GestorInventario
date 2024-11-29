@@ -162,7 +162,7 @@ namespace GestorInventario.SistemaRegistro
         #region Botón de Volver
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult resultado = MessageBox.Show("¿Desea regresar?", "ATLAS CORP | Registro", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult resultado = MessageBox.Show("¿Desea regresar?", "ATLAS CORP | REGRESAR", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (resultado == MessageBoxResult.Yes)
             {

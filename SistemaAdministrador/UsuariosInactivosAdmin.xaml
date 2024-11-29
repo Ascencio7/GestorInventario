@@ -1,0 +1,15 @@
+﻿<Window x:Class="GestorInventario.SistemaAdministrador.UsuariosInactivosAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorInventario.SistemaAdministrador"
+        mc:Ignorable="d"
+        Title="ATLAS CORP | USUARIOS INACTIVOS " ResizeMode="NoResize" Background="LightGray" Height="679" Width="1052" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
+    <Grid Background="White" Margin="0,0,47,0" Cursor="">
+        <Label Content="Usuarios Inactivos" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Times New Roman" Width="241" Height="39"/>
+        <DataGrid x:Name="gridUsuariosInactivosAdmin" Background="white" HorizontalAlignment="Center" IsReadOnly="True" Cursor="Hand" FontFamily="Times New Roman" Height="425" Margin="0,167,0,0" VerticalAlignment="Top" Width="952"/>
+        <Button x:Name="btnVolver" Content="Regresar" Margin="13,10,841,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" Click="btnVolver_Click" MouseEnter="btnVolver_MouseEnter" MouseLeave="btnVolver_MouseLeave"/>
+
+    </Grid>
+</Window>
