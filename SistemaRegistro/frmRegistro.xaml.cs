@@ -299,7 +299,7 @@ namespace GestorInventario.SistemaRegistro
             }
 
             // Capturar los valores de los controles
-            int usuarioID = int.Parse(""); // Asume que tienes un campo para capturar el ID del usuario
+            int usuarioID = int.Parse(txtIDUsuario.Text); // Asume que tienes un campo para capturar el ID del usuario
             string nombreUsuario = txtNombreUsuario.Text.Trim();
             string correo = txtCorreoUsuario.Text.Trim();
             string password = txtPasswordUsuario.Password; // PasswordBox
@@ -307,10 +307,11 @@ namespace GestorInventario.SistemaRegistro
             int estadoID = cbEstadosUsuarios.SelectedIndex + 1; // Ajustar según los valores de tu ComboBox
 
             // Llamar al método de edición
-            string resultado = EditarUsuario(userID, nombreUsuario, correo, password, rolID, estadoID);
+            string resultado = EditarUsuario(usuarioID, nombreUsuario, correo, password, rolID, estadoID);
 
             // Mostrar el resultado
             MessageBox.Show(resultado, "Resultado", MessageBoxButton.OK, MessageBoxImage.Information);
+            MostrarUsuarios();
             LimpiarCampos();
         }
 
@@ -335,6 +336,7 @@ namespace GestorInventario.SistemaRegistro
                         {
                             if (dr.Read())
                             {
+                                txtIDUsuario.Text = dr["UserID"].ToString();
                                 txtNombreUsuario.Text = dr["NombreUsuario"].ToString();
                                 txtCorreoUsuario.Text = dr["Correo"].ToString();
                                 txtPasswordUsuario.Password = dr["ContrasenaDesencriptada"].ToString();

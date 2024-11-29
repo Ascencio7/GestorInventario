@@ -8,13 +8,14 @@
         Title="ATLAS CORP | REGISTRO" ResizeMode="NoResize" Background="LightGray" Height="679" Width="1052" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
 
     <Grid Background="White" Margin="0,0,47,0" Cursor="">
-        <Label Content="Nombre Usuario:" HorizontalAlignment="Left" Margin="37,63,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
-        <Label Content="Correo:" HorizontalAlignment="Left" Margin="58,104,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
+        <Label Content="Nombre Usuario:" HorizontalAlignment="Left" Margin="37,102,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
+        <Label Content="Correo:" HorizontalAlignment="Left" Margin="57,145,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
         <Label Content="Contrasena:" HorizontalAlignment="Left" Margin="47,181,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
         <Label Content="Rol:" HorizontalAlignment="Left" Margin="65,239,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
         <Label Content="Estado Usuario:" HorizontalAlignment="Left" Margin="37,297,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>
-        <TextBox x:Name="txtNombreUsuario" Background="LightGray" HorizontalAlignment="Left" Margin="178,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444" FontFamily="Times New Roman" FontSize="12" Cursor="Hand"/>
-        <TextBox x:Name="txtCorreoUsuario" Background="LightGray" HorizontalAlignment="Left" Margin="178,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" FontFamily="Times New Roman" FontSize="12" Cursor="Hand"/>
+        <TextBlock x:Name="txtIDUsuario" HorizontalAlignment="Left" Background="LightGray" Height="22" Margin="178,74,0,0" TextWrapping="Wrap" FontFamily="Times New Roman" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="txtNombreUsuario" Background="LightGray" HorizontalAlignment="Left" Margin="178,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444" FontFamily="Times New Roman" FontSize="12" Cursor="Hand"/>
+        <TextBox x:Name="txtCorreoUsuario" Background="LightGray" HorizontalAlignment="Left" Margin="178,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" FontFamily="Times New Roman" FontSize="12" Cursor="Hand"/>
         <PasswordBox x:Name="txtPasswordUsuario"  Background="LightGray" HorizontalAlignment="Left" Margin="178,181,0,0" VerticalAlignment="Top" Width="421" FontFamily="Times New Roman" FontSize="12" Cursor="Hand"/>
         <ComboBox x:Name="cbRolesUsuarios" Background="LightGray" HorizontalAlignment="Left" Margin="178,239,0,0" VerticalAlignment="Top" Width="199" FontFamily="Times New Roman" FontSize="12" Cursor="Hand">
             <ComboBoxItem Content="Administrador" Tag="1"/>
@@ -29,6 +30,7 @@
         <Button x:Name="btnRegistrarse" Content="Registrar" Margin="791,0,26,471" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Cursor="Hand" MouseEnter="btnRegistrarse_MouseEnter" MouseLeave="btnRegistrarse_MouseLeave" Height="32" VerticalAlignment="Bottom" Click="btnRegistrarse_Click"/>
         <Button x:Name="btnEditar" Content="Editar" Margin="791,220,26,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Cursor="Hand" Height="32" VerticalAlignment="Top" Click="btnEditar_Click"/>
         <DataGrid x:Name="gridUsuariosAdmin" IsReadOnly="True" Margin="13,359,10,10" FontFamily="Times New Roman" SelectionChanged="gridUsuariosAdmin_SelectionChanged"/>
+        <Label Content="ID Usuario:" FontFamily="Times New Roman" HorizontalAlignment="Left" Margin="59,74,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
