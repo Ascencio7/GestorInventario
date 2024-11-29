@@ -38,7 +38,6 @@ namespace GestorInventario.SistemaRegistro
 
 
         #region Metodo Mostrar Usuarios
-
         void MostrarUsuarios()
         {
             using (SqlConnection conexion = ConexionDB.ObtenerCnx())
@@ -69,109 +68,13 @@ namespace GestorInventario.SistemaRegistro
                 }
             }
         }
-
-
         #endregion
 
 
 
         #region Validar Formulario
 
-
-
-
-
-        #endregion
-
-
-        #region Limpiar Campos
-
-        public void LimpiarCampos()
-        {
-            txtNombreUsuario.Text = "";
-            txtCorreoUsuario.Text = "";
-            txtPasswordUsuario.Clear();
-            cbRolesUsuarios.Items.Clear();
-            cbEstadosUsuarios.Items.Clear();
-        }
-
-        #endregion
-
-
-        #region Metodo de Registro Usuario
-
-        public string RegistroUsuario(string nombreUsuario, string correo, string password, int rolID, int estadoID)
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection("Data Source=VLADIMIR\\SQLEXPRESS ;Database=ATLAS_INVENTARIO ;Integrated Security=True;Encrypt=False"))
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand("spRegistrarUsuario", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        // Pasar parámetros al procedimiento almacenado
-                        command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
-                        command.Parameters.AddWithValue("@Correo", correo);
-                        command.Parameters.AddWithValue("@Contra", password); // Contraseña sin cifrar, el procedimiento lo hará
-                        command.Parameters.AddWithValue("@RolID", rolID);
-                        command.Parameters.AddWithValue("@EstadoID", estadoID);
-
-                        command.ExecuteNonQuery();
-                    }
-                }
-                return "Usuario registrado correctamente.";
-            }
-            catch (Exception ex)
-            {
-                return $"Se produjo un error inesperado: {ex.Message}";
-            }
-
-        }
-
-        #endregion
-
-
-
-
-
-
-        private void btnVolver_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult resultado = MessageBox.Show("¿Desea regresar?", "ATLAS CORP | Registro", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (resultado == MessageBoxResult.Yes)
-            {
-                frmInicioAdministrador inicioAdmin = new frmInicioAdministrador();
-                this.Hide();
-                inicioAdmin.Show();
-            }
-        }
-
-        private void btnVolver_MouseEnter(object sender, MouseEventArgs e)
-        {
-            btnVolver.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-        }
-
-        private void btnVolver_MouseLeave(object sender, MouseEventArgs e)
-        {
-            btnVolver.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-
-        private void btnRegistrarse_MouseEnter(object sender, MouseEventArgs e)
-        {
-            btnRegistrarse.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-
-        }
-
-        private void btnRegistrarse_MouseLeave(object sender, MouseEventArgs e)
-        {
-            btnRegistrarse.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-
-        }
-
-        private void btnRegistrarse_Click(object sender, RoutedEventArgs e)
+        public void ValidarFormulario()
         {
             // Validaciones de campos
             if (string.IsNullOrWhiteSpace(txtNombreUsuario.Text))
@@ -203,6 +106,127 @@ namespace GestorInventario.SistemaRegistro
                 MessageBox.Show("Debe seleccionar un estado.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+        }
+        #endregion
+
+
+
+        #region Limpiar Campos
+
+        public void LimpiarCampos()
+        {
+            txtIDUsuario.Text = "";
+            txtNombreUsuario.Text = "";
+            txtCorreoUsuario.Text = "";
+            txtPasswordUsuario.Clear();
+            cbRolesUsuarios.Items.Clear();
+            cbEstadosUsuarios.Items.Clear();
+        }
+        #endregion
+
+
+
+        #region Metodo de Registro Usuario
+        public string RegistroUsuario(string nombreUsuario, string correo, string password, int rolID, int estadoID)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection("Data Source=VLADIMIR\\SQLEXPRESS ;Database=ATLAS_INVENTARIO ;Integrated Security=True;Encrypt=False"))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("spRegistrarUsuario", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Pasar parámetros al procedimiento almacenado
+                        command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                        command.Parameters.AddWithValue("@Correo", correo);
+                        command.Parameters.AddWithValue("@Contra", password); // Contraseña sin cifrar, el procedimiento lo hará
+                        command.Parameters.AddWithValue("@RolID", rolID);
+                        command.Parameters.AddWithValue("@EstadoID", estadoID);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+                return "Usuario registrado correctamente.";
+            }
+            catch (Exception ex)
+            {
+                return $"Se produjo un error inesperado: {ex.Message}";
+            }
+        }
+        #endregion
+
+
+
+        #region Botón de Volver
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult resultado = MessageBox.Show("¿Desea regresar?", "ATLAS CORP | Registro", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (resultado == MessageBoxResult.Yes)
+            {
+                frmInicioAdministrador inicioAdmin = new frmInicioAdministrador();
+                this.Hide();
+                inicioAdmin.Show();
+            }
+        }
+        #endregion
+
+
+
+        #region Colores de Botones
+        private void btnVolver_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnVolver.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnVolver_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnVolver.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnRegistrarse_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnRegistrarse.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+
+        }
+
+        private void btnRegistrarse_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnRegistrarse.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+
+        }
+
+        private void btnEditar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnEditar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnEditar_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnEditar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnCancelar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnCancelar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnCancelar_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnCancelar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+
+
+        #endregion
+
+
+        #region Botón Registrar Usuario
+        private void btnRegistrarse_Click(object sender, RoutedEventArgs e)
+        {
+            ValidarFormulario();
 
             // Capturar los valores de los controles
             string nombreUsuario = txtNombreUsuario.Text.Trim();
@@ -219,11 +243,11 @@ namespace GestorInventario.SistemaRegistro
             LimpiarCampos();
             MostrarUsuarios();  
         }
+        #endregion
 
 
 
         #region Metodo para Editar Usuario
-
         public string EditarUsuario(int userID, string nombreUsuario, string correo, string password, int rolID, int estadoID)
         {
             try
@@ -261,60 +285,35 @@ namespace GestorInventario.SistemaRegistro
                 return $"Se produjo un error inesperado: {ex.Message}";
             }
         }
-
-
         #endregion
 
+
+        #region Botón Editar Usuario
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
             // Validaciones de campos
-            if (string.IsNullOrWhiteSpace(txtNombreUsuario.Text))
-            {
-                MessageBox.Show("El campo 'Nombre de Usuario' es obligatorio.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtCorreoUsuario.Text))
-            {
-                MessageBox.Show("El campo 'Correo' es obligatorio.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtPasswordUsuario.Password))
-            {
-                MessageBox.Show("El campo 'Contraseña' es obligatorio.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (cbRolesUsuarios.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar un rol.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (cbEstadosUsuarios.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar un estado.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
+            ValidarFormulario();
 
             // Capturar los valores de los controles
-            int usuarioID = int.Parse(txtIDUsuario.Text); // Asume que tienes un campo para capturar el ID del usuario
+            int usuarioID = int.Parse(txtIDUsuario.Text);
             string nombreUsuario = txtNombreUsuario.Text.Trim();
             string correo = txtCorreoUsuario.Text.Trim();
             string password = txtPasswordUsuario.Password; // PasswordBox
-            int rolID = cbRolesUsuarios.SelectedIndex + 1; // Ajustar según los valores de tu ComboBox
-            int estadoID = cbEstadosUsuarios.SelectedIndex + 1; // Ajustar según los valores de tu ComboBox
+            int rolID = cbRolesUsuarios.SelectedIndex + 1;
+            int estadoID = cbEstadosUsuarios.SelectedIndex + 1;
 
             // Llamar al método de edición
             string resultado = EditarUsuario(usuarioID, nombreUsuario, correo, password, rolID, estadoID);
 
             // Mostrar el resultado
             MessageBox.Show(resultado, "Resultado", MessageBoxButton.OK, MessageBoxImage.Information);
-            MostrarUsuarios();
-            LimpiarCampos();
+            MostrarUsuarios(); // Cargar los datos nuevos del usuario
+            LimpiarCampos(); // Limpiar los campos
         }
+        #endregion
 
+
+        #region Evento del GRID
         private void gridUsuariosAdmin_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UsuariosModel usuarios = (UsuariosModel)gridUsuariosAdmin.SelectedItem;
@@ -357,5 +356,20 @@ namespace GestorInventario.SistemaRegistro
                 LimpiarCampos();
             }
         }
+
+
+
+        #endregion
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            if(MessageBox.Show("¿Desea cancelar la operación?", "ATLAS CORP | CANCELAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                MostrarUsuarios();
+                LimpiarCampos();
+            }
+        }
+
+      
     }
 }
