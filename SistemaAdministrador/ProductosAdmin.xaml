@@ -1,0 +1,30 @@
+﻿<Window x:Class="GestorInventario.SistemaAdministrador.ProductosAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorInventario.SistemaAdministrador"
+        mc:Ignorable="d"
+        Title="ATLAS CORP | PRODUCTOS " ResizeMode="NoResize" Background="LightGray" Height="679" Width="1052" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
+    <Grid Background="White" Cursor="" HorizontalAlignment="Left" Width="982">
+
+
+        <DataGrid x:Name="gridProductosAdmin" HorizontalAlignment="Center" Height="240" Margin="0,403,0,0" VerticalAlignment="Top" Width="932" IsReadOnly="True" Cursor="Hand"/>
+        <Label Content="ID Producto:" HorizontalAlignment="Left" Margin="118,169,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <Label Content="Producto:" HorizontalAlignment="Left" Margin="425,168,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <Label Content="Precio:" HorizontalAlignment="Left" Margin="730,164,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="158,274,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <Label Content="Proveedor:" HorizontalAlignment="Left" Margin="467,274,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <TextBlock x:Name="txtProductoIDAdmin" HorizontalAlignment="Left" Height="20" Margin="128,204,0,0" TextWrapping="Wrap" TextAlignment="Center" Background="LightGray" VerticalAlignment="Top" Width="64" FontFamily="Times New Roman" FontSize="15"/>
+        <TextBox x:Name="txtNombreProductoAdmin" Cursor="Hand" TextAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="305,193,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Width="278" FontFamily="Times New Roman" FontSize="15"/>
+        <TextBox x:Name="txtPrecioProductoAdmin" Cursor="Hand" HorizontalAlignment="Left" Height="30" Margin="716,194,0,0" TextWrapping="Wrap" Background="LightGray" TextAlignment="Center" VerticalAlignment="Top" Width="104" FontFamily="Times New Roman" FontSize="15"/>
+        <TextBox x:Name="txtCantidadProductoAdmin" Cursor="Hand" HorizontalAlignment="Left" Height="25" Margin="125,304,0,0" TextWrapping="Wrap" Background="LightGray" TextAlignment="Center" VerticalAlignment="Top" Width="133" FontFamily="Times New Roman" FontSize="15"/>
+        <ComboBox Name="cbProveedor" Cursor="Hand" HorizontalAlignment="Center" Height="23" Margin="0,304,0,0" VerticalAlignment="Top" Width="184" FontFamily="Times New Roman" FontSize="15"/>
+        <Button x:Name="btnRegresarAdmin" Content="Regresar" Margin="13,10,818,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" Click="btnRegresarAdmin_Click"/>
+        <Button x:Name="btnRegistrarProductoAdmin" Content="Registrar Producto" Margin="868,245,-37,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top"/>
+        <Button x:Name="btnEditarProductoAdmin" Content="Editar Producto" Margin="868,288,-37,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top"/>
+        <Button x:Name="btnCancelarProductoAdmin" Content="Cancelar" Margin="868,332,-37,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top"/>
+        <Label Content="           REGISTRO Y MODIFICACIÓN&#xA;&#x9;      &#x9;  DE&#xA;           &#x9;         PRODUCTOS" FontFamily="Times New Roman" FontSize="20" HorizontalAlignment="Left" Margin="305,51,0,0" VerticalAlignment="Top" Height="118" Width="376"/>
+
+    </Grid>
+</Window>

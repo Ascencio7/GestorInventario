@@ -34,6 +34,13 @@
                     <TextBlock  Text="Usuarios Inactivos" FontFamily="Times New Roman" VerticalAlignment="Center" Foreground="White" FontSize="13" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
+
+            <Button x:Name="btnGestionProductosAdmin" Width="190" Height="50" Padding="5" Background="#058789" FontFamily="Verdana" Cursor="Hand" FontSize="14" Margin="0,10" Click="btnGestionProductosAdmin_Click" MouseEnter="btnGestionProductosAdmin_MouseEnter" MouseLeave="btnGestionProductosAdmin_MouseLeave" >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Source="/Imagenes/producto.png" Width="40" Height="50" Margin="0,0,20,0" VerticalAlignment="Center"/>
+                    <TextBlock  Text="Gestión de Productos" FontFamily="Times New Roman" VerticalAlignment="Center" Foreground="White" FontSize="13" FontWeight="Bold"/>
+                </StackPanel>
+            </Button>
             <Button x:Name="btnSalirAdmin" Width="190" Height="50" Padding="5" Background="#058789" FontFamily="Verdana" Cursor="Hand" FontSize="14" Margin="0,10" Click="btnSalirAdmin_Click" MouseEnter="btnSalirAdmin_MouseEnter" MouseLeave="btnSalirAdmin_MouseLeave">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Image Source="/Imagenes/salir.png" Width="40" Height="50" Margin="0,0,100,0" VerticalAlignment="Center"/>

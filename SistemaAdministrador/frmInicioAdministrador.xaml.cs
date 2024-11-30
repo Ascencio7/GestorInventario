@@ -107,5 +107,22 @@ namespace GestorInventario.SistemaAdministrador
         {
             btnCerrarAplicacionAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
         }
+
+        private void btnGestionProductosAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            ProductosAdmin formProductosAdmin = new ProductosAdmin();
+            this.Hide();
+            formProductosAdmin.Show();
+        }
+
+        private void btnGestionProductosAdmin_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnGestionProductosAdmin.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnGestionProductosAdmin_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnGestionProductosAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
     }
 }
