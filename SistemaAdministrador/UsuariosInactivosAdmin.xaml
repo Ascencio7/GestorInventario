@@ -8,8 +8,22 @@
         Title="ATLAS CORP | USUARIOS INACTIVOS " ResizeMode="NoResize" Background="LightGray" Height="679" Width="1052" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
     <Grid Background="White" Margin="0,0,47,0" Cursor="">
         <Label Content="Usuarios Inactivos" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Times New Roman" Width="241" Height="39"/>
-        <DataGrid x:Name="gridUsuariosInactivosAdmin" Background="white" HorizontalAlignment="Center" IsReadOnly="True" Cursor="Hand" FontFamily="Times New Roman" Height="425" Margin="0,167,0,0" VerticalAlignment="Top" Width="952"/>
+        <DataGrid x:Name="gridUsuariosInactivosAdmin" Background="white" HorizontalAlignment="Center" IsReadOnly="True" Cursor="Hand" FontFamily="Times New Roman" Height="351" Margin="0,302,0,0" VerticalAlignment="Top" Width="952" SelectionChanged="gridUsuariosInactivosAdmin_SelectionChanged"/>
         <Button x:Name="btnVolver" Content="Regresar" Margin="13,10,841,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" Click="btnVolver_Click" MouseEnter="btnVolver_MouseEnter" MouseLeave="btnVolver_MouseLeave"/>
+        <Label Content="ID Usuario: " FontFamily="Times New Roman" FontSize="15" HorizontalAlignment="Left" Height="31" Margin="59,114,0,0" VerticalAlignment="Top" Width="83"/>
+        <TextBlock x:Name="txtIDUsuarioInactivoAdmin" TextAlignment="Center" Background="LightGray" HorizontalAlignment="Left" Height="26" Margin="79,148,0,0" TextWrapping="Wrap" FontFamily="Times New Roman" FontSize="15" VerticalAlignment="Top" Width="43"/>
+        <Button x:Name="btnActivarUsuarioAdmin" Content="Activar" Margin="868,190,-14,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" Click="btnActivarUsuarioAdmin_Click" MouseEnter="btnActivarUsuarioAdmin_MouseEnter" MouseLeave="btnActivarUsuarioAdmin_MouseLeave"/>
+        <Button x:Name="btnCancelarActivarUsuarioAdmin" Content="Cancelar" Margin="868,245,-14,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" MouseEnter="btnCancelarActivarUsuarioAdmin_MouseEnter" MouseLeave="btnCancelarActivarUsuarioAdmin_MouseLeave" Click="btnCancelarActivarUsuarioAdmin_Click"/>
+        <Label Content="Nombre del Usuario:" FontFamily="Times New Roman" FontSize="15" HorizontalAlignment="Left" Margin="248,112,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtNombreUsuarioInactivoAdmin" TextAlignment="Center" Background="LightGray" FontFamily="Times New Roman" FontSize="15" HorizontalAlignment="Left" Height="27" Margin="186,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258"/>
+        <Label Content="Correo:" FontFamily="Times New Roman" FontSize="15" HorizontalAlignment="Left" Margin="596,112,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtCorreoUsuarioInactivoAdmin" TextAlignment="Center" HorizontalAlignment="Left" FontSize="15" FontFamily="Times New Roman" Background="LightGray" Height="27" Margin="469,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307"/>
+        <Label Content="Contraseña:" FontFamily="Times New Roman" FontSize="15" HorizontalAlignment="Left" Margin="111,197,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtContraUsuarioInactivoAdmin" TextAlignment="Center" HorizontalAlignment="Left" Height="21" Margin="43,234,0,0" TextWrapping="Wrap" Background="LightGray" FontFamily="Times New Roman" FontSize="15" VerticalAlignment="Top" Width="216"/>
+        <Label Content="Rol:" FontFamily="Times New Roman" FontSize="15" HorizontalAlignment="Left" Margin="371,199,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtRolUsuarioInactivoAdmin" TextAlignment="Center" HorizontalAlignment="Left" Height="21" Margin="304,234,0,0" TextWrapping="Wrap" Background="LightGray" FontFamily="Times New Roman" FontSize="15" VerticalAlignment="Top" Width="168"/>
+        <Label Content="Estado:" FontFamily="Times New Roman" FontSize="15" HorizontalAlignment="Left" Margin="597,199,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtEstadoUsuarioInactivoAdmin" TextAlignment="Center" HorizontalAlignment="Left" Height="21" Margin="545,232,0,0" TextWrapping="Wrap" Background="LightGray" FontFamily="Times New Roman" FontSize="15" VerticalAlignment="Top" Width="139"/>
 
     </Grid>
 </Window>
