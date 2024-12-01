@@ -70,7 +70,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataAcces\ConexionDB.cs" />
+    <Compile Include="ModeloProducto\ProductosModel.cs" />
+    <Compile Include="ModeloProveedor\ProveedorModelo.cs" />
     <Compile Include="ModeloUsuario\UsuariosModel.cs" />
+    <Compile Include="ServiceProducto\DatosProductos.cs" />
     <Compile Include="ServiceUsuario\DatosUsuarios.cs" />
     <Compile Include="SistemaAdministrador\frmInicioAdministrador.xaml.cs">
       <DependentUpon>frmInicioAdministrador.xaml</DependentUpon>
