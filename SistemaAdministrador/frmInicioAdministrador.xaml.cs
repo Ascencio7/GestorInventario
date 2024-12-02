@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
+using GestorInventario.ReporteVista;
 using GestorInventario.SistemaLogin;
 
 namespace GestorInventario.SistemaAdministrador
@@ -123,6 +124,13 @@ namespace GestorInventario.SistemaAdministrador
         private void btnGestionProductosAdmin_MouseLeave(object sender, MouseEventArgs e)
         {
             btnGestionProductosAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnReportesAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            menuReportes formMenuReportes = new menuReportes();
+            this.Hide();
+            formMenuReportes.Show();
         }
     }
 }

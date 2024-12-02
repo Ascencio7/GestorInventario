@@ -17,11 +17,15 @@ using System.Windows.Shapes;
 // Base de datos
 using System.Data.SqlClient;
 using MaterialDesignThemes.Wpf;
+
 using System.Security.Cryptography;
-//using System.Web.UI.WebControls;
+using System.Web.UI.WebControls;
+
+
 using GestorInventario.SistemaAdministrador;
 using GestorInventario.SistemaAuxiliar;
 using GestorInventario.SistemaRegistro;
+using GestorInventario.ReporteVista;
 
 namespace GestorInventario.SistemaLogin
 {
