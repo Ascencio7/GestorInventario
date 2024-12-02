@@ -168,12 +168,6 @@
     <Resource Include="LogoPrincipal\ATLAS CORP.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SistemaLogin\ATLAS CORP.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="SistemaLogin\inventario.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="LogoPrincipal\inventario.png" />
   </ItemGroup>
   <ItemGroup>
