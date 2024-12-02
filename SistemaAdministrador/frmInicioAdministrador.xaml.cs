@@ -132,5 +132,15 @@ namespace GestorInventario.SistemaAdministrador
             this.Hide();
             formMenuReportes.Show();
         }
+
+        private void btnReportesAdmin_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnReportesAdmin.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnReportesAdmin_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnReportesAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
     }
 }

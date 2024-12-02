@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorInventario.ReporteVista"
         mc:Ignorable="d"
-        Title="Reportes" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="btnReporteUsuariosActivosAdmin" Content="Usuarios Activos" HorizontalAlignment="Left" Height="101" Margin="89,103,0,0" VerticalAlignment="Top" Width="194" Click="btnReporteUsuariosActivosAdmin_Click"/>
-        <Button x:Name="btnReporteUsuariosInactivosAdmin" Content="Usuarios Inactivos" HorizontalAlignment="Left" Height="101" Margin="527,103,0,0" VerticalAlignment="Top" Width="194"/>
-        <Button x:Name="btnReporteProductosAdmin" Content="Productos" HorizontalAlignment="Center" Height="101" Margin="0,249,0,0" VerticalAlignment="Top" Width="194"/>
+        Title="Reportes" Height="450" Width="824" Icon="/ReporteVista/inventario.png" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Background="LightGray">
+    <Grid Background="White" Cursor="" HorizontalAlignment="Left" Width="785">
+        <Button x:Name="btnReporteUsuariosActivosAdmin" Background="#FF058789" Content="Usuarios Activos" HorizontalAlignment="Left" Height="62" Margin="155,181,0,0" VerticalAlignment="Top" Width="168" Click="btnReporteUsuariosActivosAdmin_Click"/>
+        <Button x:Name="btnReporteUsuariosInactivosAdmin" Background="#FF058789" Content="Usuarios Inactivos" HorizontalAlignment="Left" Height="62" Margin="475,0,0,0" VerticalAlignment="Center" Width="182"/>
+        <Button x:Name="btnReporteProductosAdmin" Background="#FF058789" Content="Productos" HorizontalAlignment="Left" Height="56" Margin="353,307,0,0" VerticalAlignment="Top" Width="135"/>
+        <Button x:Name="btnRegresar" Content="Regresar" Background="#FF058789" HorizontalAlignment="Left" Height="50" Margin="10,0,0,359" VerticalAlignment="Bottom" Width="131" Click="btnRegresar_Click"/>
 
     </Grid>
 </Window>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GestorInventario.SistemaLogin"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="ATLAS CORP | INICIAR SESIÓN" Background="LightGray" Height="450" Width="763" FontFamily="Verdana" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+        Title="ATLAS CORP | INICIAR SESIÓN" Background="LightGray" Height="450" Width="763" FontFamily="Verdana" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Icon="/SistemaLogin/inventario.png">
     <Grid Background="White" Margin="0,0,47,0">
         <Label Content="BIENVENIDO A &#xD;&#xA;ATLAS CORP" HorizontalAlignment="Left" Height="86" Margin="388,61,0,0" VerticalAlignment="Top" Width="308" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" HorizontalContentAlignment="Center"/>
         <Image Source="/LogoPrincipal/ATLAS CORP.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Left" Width="331" Height="450"/>

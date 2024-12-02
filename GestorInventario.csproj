@@ -95,6 +95,9 @@
     <Compile Include="ReporteVista\menuReportes.xaml.cs">
       <DependentUpon>menuReportes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReporteVista\UsuariosActivosReporteAdmin.xaml.cs">
+      <DependentUpon>UsuariosActivosReporteAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ServiceProducto\DatosProductos.cs" />
     <Compile Include="ServiceUsuario\DatosUsuarios.cs" />
     <Compile Include="SistemaAdministrador\frmInicioAdministrador.xaml.cs">
@@ -135,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReporteVista\menuReportes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReporteVista\UsuariosActivosReporteAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ReporteVista\inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SistemaLogin\inventario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

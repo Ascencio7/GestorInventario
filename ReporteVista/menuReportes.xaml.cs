@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using GestorInventario.ReporteVista;
+using GestorInventario.SistemaAdministrador;
 
 namespace GestorInventario.ReporteVista
 {
@@ -28,9 +29,18 @@ namespace GestorInventario.ReporteVista
 
         private void btnReporteUsuariosActivosAdmin_Click(object sender, RoutedEventArgs e)
         {
-            frmUsuariosActivosReporteVista formReporte = new frmUsuariosActivosReporteVista();
-            this.Hide();
-            formReporte.Show();
+            UsuariosActivosReporteAdmin formUsuariosRpt = new UsuariosActivosReporteAdmin();
+            formUsuariosRpt.Show();
+        }
+
+        private void btnRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            if(MessageBox.Show("¿Desea regresar al menú del Administrador?", "ATLAS CORP | REGRESAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                frmInicioAdministrador frmInicioAdministrador = new frmInicioAdministrador();
+                this.Hide();
+                frmInicioAdministrador.Show();
+            }
         }
     }
 }
