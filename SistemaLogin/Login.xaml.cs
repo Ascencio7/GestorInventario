@@ -100,12 +100,11 @@ namespace GestorInventario.SistemaLogin
 
 
         #region Metodo Iniciar Sesion
-
         public void IniciarSesion()
         {
             if(string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtPass.Password))
             {
-                MessageBox.Show("Por favor, ingrese su correo y contraseña.", "HOSPI PLUS | Campos Vacios", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Por favor, ingrese su correo y contraseña.", "ATLAS CORP | CAMPOS VACIOS", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return;
             }
 
@@ -119,7 +118,7 @@ namespace GestorInventario.SistemaLogin
                 switch(usuario.Rol)
                 {
                     case "Administrador":
-                        MessageBox.Show("¡Bienvenido!", "ATLA CORP | Sistema Administrador", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("¡Bienvenido al Sistema Administrador!", "ATLA CORP | SISTEMA ADMINISTRADOR", MessageBoxButton.OK, MessageBoxImage.Information);
                         frmInicioAdministrador inicioAdmin = new frmInicioAdministrador();
                         //MainWindow main = new MainWindow()
                         this.Hide();
@@ -127,28 +126,27 @@ namespace GestorInventario.SistemaLogin
                         inicioAdmin.Show();
                         break;
                     case "Auxiliar":
-                        MessageBox.Show("¡Bienvenido!", "ATLA CORP | Sistema Auxiliar", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("¡Bienvenido al Sistema Auxiliar!", "ATLA CORP | SISTEMA AUXILIAR", MessageBoxButton.OK, MessageBoxImage.Information);
                         frmInicioAuxiliar frmInicioAuxiliar = new frmInicioAuxiliar();
                         this.Hide();
                         frmInicioAuxiliar.Show();
                         break;
                     default:
-                        MessageBox.Show("Rol de usuario no reconocido.", "ATLAS CORP | Error de Sesión", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show("Rol de usuario ingresado no ha sido reconocido.", "ATLAS CORP | ERROR DE SESIÓN", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         break;
 
                 }
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrecta.", "ATLAS CORP | Credenciales Incorrectas", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Usuario o contraseña incorrecta.", "ATLAS CORP | CREDENCIALES INCORRECTAS", MessageBoxButton.OK, MessageBoxImage.Error);
                 // Limpiar los campos de correo y contraseña
                 txtCorreo.Clear();
                 txtPass.Clear();
             }
-
         }
-
         #endregion
+
 
 
         #region Boton de Iniciar Sesion
@@ -157,6 +155,7 @@ namespace GestorInventario.SistemaLogin
             IniciarSesion();
         }
         #endregion
+
 
 
         #region Eventos ENTER
@@ -175,9 +174,11 @@ namespace GestorInventario.SistemaLogin
                 IniciarSesion();
             }
         }
-
         #endregion
 
+
+
+        #region Botón Cerrar Aplicación
         private void btnCerrarsesion_Click(object sender, RoutedEventArgs e)
         {
             // Mensaje para estar seguro si desea salir o no
@@ -188,7 +189,10 @@ namespace GestorInventario.SistemaLogin
                 Application.Current.Shutdown();
             }
         }
+        #endregion
 
+
+        #region Colores de Botones
         private void btnIniciarSesion_MouseEnter(object sender, MouseEventArgs e)
         {
             // Cambiar el color cuando el cursor entra en el área del botón
@@ -212,5 +216,10 @@ namespace GestorInventario.SistemaLogin
             // Restaurar el color original cuando el cursor sale del área del botón
             btnCerrarsesion.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
         }
+
+        #endregion
+
+
+
     }
 }

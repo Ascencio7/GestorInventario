@@ -133,6 +133,7 @@ namespace GestorInventario.SistemaAdministrador
         #endregion
 
 
+
         #region Colores Botones
         private void btnRegresarAdmin_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -176,6 +177,253 @@ namespace GestorInventario.SistemaAdministrador
 
         #endregion
 
+
+
+        #region Metodo Insertar Producto
+        public void InsertarProducto(string nombreProducto, decimal precioProducto, int cantidadProducto, string proveedor)
+        {
+            string connectionString = "Data Source=VLADIMIR\\SQLEXPRESS;Database=ATLAS_INVENTARIO;Integrated Security=True;Encrypt=False";
+
+            // Establece la conexión con la base de datos
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "InsertarProducto"; // Nombre del procedimiento almacenado
+                SqlCommand command = new SqlCommand(query, connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                // Agregar parámetros
+                command.Parameters.AddWithValue("@Nombre_Producto", nombreProducto);
+                command.Parameters.AddWithValue("@Precio_Producto", precioProducto);
+                command.Parameters.AddWithValue("@Cantidad_Producto", cantidadProducto);
+                command.Parameters.AddWithValue("@Proveedor", proveedor);
+
+                try
+                {
+                    // Abrir conexión y ejecutar el comando
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Captura de errores
+                    MessageBox.Show($"Error al insertar el producto: {ex.Message}");
+                }
+            }
+        }
+        #endregion
+
+
+
+        #region Boton Insertar Productos
+        private void btnRegistrarProductoAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string nombreProducto = txtNombreProductoAdmin.Text.Trim();
+                decimal precioProducto = Convert.ToDecimal(txtPrecioProductoAdmin.Text);
+                int cantidadProducto = Convert.ToInt32(txtCantidadProductoAdmin.Text);
+                string proveedor = txtNombreProveedorAdmin.Text.Trim();
+
+                InsertarProducto(nombreProducto,precioProducto,cantidadProducto,proveedor);
+
+                MessageBox.Show("Producto registrado exitosamente.", "ATLAS CORP | PRODUCTO REGISTRADO", MessageBoxButton.OK, MessageBoxImage.Information);
+                MostrarLosProductos();
+                limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al registrar producto: {ex.Message}", "ATLAS CORP | ERROR AL REGISTRAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        #endregion
+
+
+
+        #region Metodo Editar Producto
+        public void EditarProducto(int productoID, string nombreProducto, decimal precioProducto, int cantidadProducto, string proveedor)
+        {
+            string connectionString = "Data Source=VLADIMIR\\SQLEXPRESS;Database=ATLAS_INVENTARIO;Integrated Security=True;Encrypt=False";
+
+            // Establece la conexión con la base de datos
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "EditarProducto"; // Nombre del procedimiento almacenado
+                SqlCommand command = new SqlCommand(query, connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                // Agregar parámetros
+                command.Parameters.AddWithValue("@ProductoID", productoID);
+                command.Parameters.AddWithValue("@Nombre_Producto", nombreProducto);
+                command.Parameters.AddWithValue("@Precio_Producto", precioProducto);
+                command.Parameters.AddWithValue("@Cantidad_Producto", cantidadProducto);
+                command.Parameters.AddWithValue("@Proveedor", proveedor);
+
+                try
+                {
+                    // Abrir conexión y ejecutar el comando
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Producto actualizado exitosamente.", "ATLAS CORP | PRODUCTO MODIFICADO CORRECTAMENTE", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Captura de errores
+                    MessageBox.Show($"Error al editar el producto: {ex.Message}", "ATLAS CORP | ERROR AL EDITAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+        #endregion
+
+
+
+        #region Boton Editar Producto
+        private void btnEditarProductoAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int productoID = Convert.ToInt32(txtProductoIDAdmin.Text);
+                string nombreProducto = txtNombreProductoAdmin.Text.Trim();
+                decimal precioProducto = Convert.ToDecimal(txtPrecioProductoAdmin.Text);
+                int cantidadProducto = Convert.ToInt32(txtCantidadProductoAdmin.Text);
+                string proveedor = txtNombreProveedorAdmin.Text.Trim();
+
+                // Llamar al método de edición
+                EditarProducto(productoID, nombreProducto, precioProducto, cantidadProducto, proveedor);
+
+                MessageBox.Show("Producto actualizado exitosamente.", "ATLAS CORP | PRODUCTO MODIFICADO CORRECTAMENTE", MessageBoxButton.OK, MessageBoxImage.Information);
+                MostrarLosProductos();
+                limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al editar producto: {ex.Message}", "ATLAS CORP | ERROR AL EDITAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        #endregion
+
+
+
+        #region Eventos ENTER
+        private void txtNombreProductoAdmin_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                try
+                {
+                    // Recopilar datos de los controles de la interfaz
+                    string nombreProducto = txtNombreProductoAdmin.Text.Trim();
+                    decimal precioProducto = Convert.ToDecimal(txtPrecioProductoAdmin.Text);
+                    int cantidadProducto = Convert.ToInt32(txtCantidadProductoAdmin.Text);
+                    string proveedor = txtNombreProveedorAdmin.Text.Trim();
+
+                    // Llamar al método InsertarProducto
+                    InsertarProducto(nombreProducto, precioProducto, cantidadProducto, proveedor);
+
+                    // Mostrar un mensaje de éxito
+                    MessageBox.Show("Producto registrado exitosamente.", "ATLAS CORP | PRODUCTO REGISTRADO", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    MostrarLosProductos();
+                    limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al registrar producto: {ex.Message}", "ATLAS CORP | ERROR AL REGISTRAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void txtPrecioProductoAdmin_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                try
+                {
+                    // Recopilar datos de los controles de la interfaz
+                    string nombreProducto = txtNombreProductoAdmin.Text.Trim();
+                    decimal precioProducto = Convert.ToDecimal(txtPrecioProductoAdmin.Text);
+                    int cantidadProducto = Convert.ToInt32(txtCantidadProductoAdmin.Text);
+                    string proveedor = txtNombreProveedorAdmin.Text.Trim();
+
+                    // Llamar al método InsertarProducto
+                    InsertarProducto(nombreProducto, precioProducto, cantidadProducto, proveedor);
+
+                    // Mostrar un mensaje de éxito
+                    MessageBox.Show("Producto registrado exitosamente.", "ATLAS CORP | PRODUCTO REGISTRADO", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    MostrarLosProductos();
+                    limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al registrar producto: {ex.Message}", "ATLAS CORP | ERROR AL REGISTRAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void txtCantidadProductoAdmin_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                try
+                {
+                    // Recopilar datos de los controles de la interfaz
+                    string nombreProducto = txtNombreProductoAdmin.Text.Trim();
+                    decimal precioProducto = Convert.ToDecimal(txtPrecioProductoAdmin.Text);
+                    int cantidadProducto = Convert.ToInt32(txtCantidadProductoAdmin.Text);
+                    string proveedor = txtNombreProveedorAdmin.Text.Trim();
+
+                    // Llamar al método InsertarProducto
+                    InsertarProducto(nombreProducto, precioProducto, cantidadProducto, proveedor);
+
+                    // Mostrar un mensaje de éxito
+                    MessageBox.Show("Producto registrado exitosamente.", "ATLAS CORP | PRODUCTO REGISTRADO", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    MostrarLosProductos();
+                    limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al registrar producto: {ex.Message}", "ATLAS CORP | ERROR AL REGISTRAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void txtNombreProveedorAdmin_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                try
+                {
+                    // Recopilar datos de los controles de la interfaz
+                    string nombreProducto = txtNombreProductoAdmin.Text.Trim();
+                    decimal precioProducto = Convert.ToDecimal(txtPrecioProductoAdmin.Text);
+                    int cantidadProducto = Convert.ToInt32(txtCantidadProductoAdmin.Text);
+                    string proveedor = txtNombreProveedorAdmin.Text.Trim();
+
+                    // Llamar al método InsertarProducto
+                    InsertarProducto(nombreProducto, precioProducto, cantidadProducto, proveedor);
+
+                    // Mostrar un mensaje de éxito
+                    MessageBox.Show("Producto registrado exitosamente.", "ATLAS CORP | PRODUCTO REGISTRADO", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    MostrarLosProductos();
+                    limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al registrar producto: {ex.Message}", "ATLAS CORP | ERROR AL REGISTRAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+        #endregion
 
 
 
