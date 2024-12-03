@@ -89,14 +89,26 @@
       <DependentUpon>rptUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\rptUsuariosInactivos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptUsuariosInactivos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReporteVista\frmUsuariosActivosReporteVista.xaml.cs">
       <DependentUpon>frmUsuariosActivosReporteVista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVista\frmUsuariosInactivosReporteVista.xaml.cs">
+      <DependentUpon>frmUsuariosInactivosReporteVista.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReporteVista\menuReportes.xaml.cs">
       <DependentUpon>menuReportes.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReporteVista\UsuariosActivosReporteAdmin.xaml.cs">
       <DependentUpon>UsuariosActivosReporteAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVista\UsuariosInactivosReporteAdmin.xaml.cs">
+      <DependentUpon>UsuariosInactivosReporteAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServiceProducto\DatosProductos.cs" />
     <Compile Include="ServiceUsuario\DatosUsuarios.cs" />
@@ -137,11 +149,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ReporteVista\frmUsuariosInactivosReporteVista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReporteVista\menuReportes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReporteVista\UsuariosActivosReporteAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReporteVista\UsuariosInactivosReporteAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,6 +216,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptUsuarios.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptUsuariosInactivos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptUsuariosInactivos.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -246,10 +270,10 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ReporteVista\inventario.png" />
+    <Resource Include="SistemaLogin\inventario.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SistemaLogin\inventario.png" />
+    <Resource Include="ReporteVista\inventario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
