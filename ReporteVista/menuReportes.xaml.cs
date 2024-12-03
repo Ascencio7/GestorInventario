@@ -58,6 +58,17 @@ namespace GestorInventario.ReporteVista
         {
             btnRegresar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
         }
+
+        private void btnReporteProductosAdmin_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnReporteProductosAdmin.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnReporteProductosAdmin_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnReporteProductosAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
         #endregion
 
 
@@ -93,6 +104,15 @@ namespace GestorInventario.ReporteVista
         #endregion
 
 
+
+        #region Boton Reporte Productos
+        private void btnReporteProductosAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            ProductosReporteAdmin formProductosRpt = new ProductosReporteAdmin();
+            formProductosRpt.Show();
+        }
+
+        #endregion
 
 
     }

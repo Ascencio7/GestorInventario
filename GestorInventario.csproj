@@ -83,6 +83,12 @@
     <Compile Include="ModeloProducto\ProductosModel.cs" />
     <Compile Include="ModeloProveedor\ProveedorModelo.cs" />
     <Compile Include="ModeloUsuario\UsuariosModel.cs" />
+    <Compile Include="Reportes\rptProductos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProductos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\rptUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +101,9 @@
       <DependentUpon>rptUsuariosInactivos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReporteVista\frmProductosReporteVista.xaml.cs">
+      <DependentUpon>frmProductosReporteVista.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReporteVista\frmUsuariosActivosReporteVista.xaml.cs">
       <DependentUpon>frmUsuariosActivosReporteVista.xaml</DependentUpon>
     </Compile>
@@ -103,6 +112,9 @@
     </Compile>
     <Compile Include="ReporteVista\menuReportes.xaml.cs">
       <DependentUpon>menuReportes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVista\ProductosReporteAdmin.xaml.cs">
+      <DependentUpon>ProductosReporteAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReporteVista\UsuariosActivosReporteAdmin.xaml.cs">
       <DependentUpon>UsuariosActivosReporteAdmin.xaml</DependentUpon>
@@ -145,6 +157,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReporteVista\frmProductosReporteVista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReporteVista\frmUsuariosActivosReporteVista.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReporteVista\menuReportes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReporteVista\ProductosReporteAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,6 +231,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptProductos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProductos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
