@@ -1,0 +1,14 @@
+﻿<Page x:Class="GestorInventario.SistemaAuxiliar.pageBienvenidaAuxiliar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GestorInventario.SistemaAuxiliar"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="pageBienvenidaAuxiliar" Background="White">
+
+    <Grid>
+        <Label FontFamily="Times New Roman" Content="      &#xA;&#xA;       &#x9;BIENVENIDO AL SISTEMA AUXILIAR &#xA;&#x9;      DE ATLAS CORPORATION&#xA;&#x9;&#x9;           |&#xA;&#x9;GESTOR DE INVENTARIOS DE &#xA;&#x9;                 PRODUCTOS&#xA;&#xA;" FontSize="32" FontWeight="Bold" Height="450" VerticalAlignment="Center" HorizontalAlignment="Center" Width="800"/>
+    </Grid>
+</Page>

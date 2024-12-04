@@ -139,6 +139,9 @@
     <Compile Include="SistemaAuxiliar\frmInicioAuxiliar.xaml.cs">
       <DependentUpon>frmInicioAuxiliar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SistemaAuxiliar\pageBienvenidaAuxiliar.xaml.cs">
+      <DependentUpon>pageBienvenidaAuxiliar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SistemaLogin\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -202,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SistemaAuxiliar\frmInicioAuxiliar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SistemaAuxiliar\pageBienvenidaAuxiliar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

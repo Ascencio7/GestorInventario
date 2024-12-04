@@ -165,14 +165,13 @@ namespace GestorInventario.SistemaAdministrador
         #region Boton Cerrar la Aplicacion
         private void btnCerrarAplicacionAdmin_Click(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show("¿Desea cerrar la aplicación?", "ATLAS CORP", MessageBoxButton.YesNo, MessageBoxImage.Question)== MessageBoxResult.Yes)
+            if(MessageBox.Show("¿Desea cerrar la aplicación?", "ATLAS CORP | CERRAR APLICACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question)== MessageBoxResult.Yes)
             {
                 MessageBox.Show("Cerrando la aplicación desde el Sistema Administrador.", "ATLAS CORP | CERRANDO APLICACIÓN", MessageBoxButton.OK, MessageBoxImage.Information);
                 Application.Current.Shutdown();
             }
         }
         #endregion
-
 
 
     }
