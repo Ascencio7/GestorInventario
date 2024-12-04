@@ -30,6 +30,9 @@ namespace GestorInventario.ReporteVista
             InitializeComponent();
         }
 
+
+
+        #region Boton Generar Reporte
         private void btnGenerarReporte_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -43,9 +46,12 @@ namespace GestorInventario.ReporteVista
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al generar el reporte: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error al generar el reporte: " + ex.Message, "ATLAS CORP | ERROR AL GENERAR EL REPORTE", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
         }
+        #endregion
+
+
     }
 }

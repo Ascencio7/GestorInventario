@@ -18,6 +18,8 @@ namespace GestorInventario.ServiceProducto
     {
         public DatosProductos() { }
 
+
+        #region Mostrar Los Productos
         public static List<ProductosModel> MostrarProductos()
         {
             List<ProductosModel> lstProductos = new List<ProductosModel>();
@@ -53,7 +55,7 @@ namespace GestorInventario.ServiceProducto
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al mostrar los datos: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error al mostrar los datos: " + ex.Message, "ATLAS CORP | ERROR AL CARGAR LOS DATOS", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
@@ -64,5 +66,9 @@ namespace GestorInventario.ServiceProducto
             }
             return lstProductos;
         }
+        #endregion
+
+
+
     }
 }

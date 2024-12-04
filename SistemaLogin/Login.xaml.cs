@@ -41,6 +41,36 @@ namespace GestorInventario.SistemaLogin
         }
 
 
+        #region Colores de Botones
+        private void btnIniciarSesion_MouseEnter(object sender, MouseEventArgs e)
+        {
+            // Cambiar el color cuando el cursor entra en el área del botón
+            btnIniciarSesion.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnIniciarSesion_MouseLeave(object sender, MouseEventArgs e)
+        {
+            // Restaurar el color original cuando el cursor sale del área del botón
+            btnIniciarSesion.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnCerrarsesion_MouseEnter(object sender, MouseEventArgs e)
+        {
+            // Cambiar el color cuando el cursor entra en el área del botón
+            btnCerrarsesion.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnCerrarsesion_MouseLeave(object sender, MouseEventArgs e)
+        {
+            // Restaurar el color original cuando el cursor sale del área del botón
+            btnCerrarsesion.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        #endregion
+
+
+
+
         #region Clases y Conexion
         public class SessionInfo
         {
@@ -136,7 +166,7 @@ namespace GestorInventario.SistemaLogin
                         frmInicioAuxiliar.Show();
                         break;
                     default:
-                        MessageBox.Show("Rol de usuario ingresado no ha sido reconocido.", "ATLAS CORP | ERROR DE SESIÓN", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show("El usuario ingresado no ha sido reconocido.", "ATLAS CORP | ERROR DE SESIÓN", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         break;
 
                 }
@@ -186,41 +216,13 @@ namespace GestorInventario.SistemaLogin
         private void btnCerrarsesion_Click(object sender, RoutedEventArgs e)
         {
             // Mensaje para estar seguro si desea salir o no
-            MessageBoxResult resultado = MessageBox.Show("¿Seguro que quiere cerrar la aplicación?", "ATLAS CORP | CERRAR APLIACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult resultado = MessageBox.Show("¿Seguro que quiere cerrar la aplicación?", "ATLAS CORP | CERRAR APLICACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question);
             // Si es así, se cierra la app
             if (resultado == MessageBoxResult.Yes)
             {
                 Application.Current.Shutdown();
             }
         }
-        #endregion
-
-
-        #region Colores de Botones
-        private void btnIniciarSesion_MouseEnter(object sender, MouseEventArgs e)
-        {
-            // Cambiar el color cuando el cursor entra en el área del botón
-            btnIniciarSesion.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-        }
-
-        private void btnIniciarSesion_MouseLeave(object sender, MouseEventArgs e)
-        {
-            // Restaurar el color original cuando el cursor sale del área del botón
-            btnIniciarSesion.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-
-        private void btnCerrarsesion_MouseEnter(object sender, MouseEventArgs e)
-        {
-            // Cambiar el color cuando el cursor entra en el área del botón
-            btnCerrarsesion.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-        }
-
-        private void btnCerrarsesion_MouseLeave(object sender, MouseEventArgs e)
-        {
-            // Restaurar el color original cuando el cursor sale del área del botón
-            btnCerrarsesion.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-
         #endregion
 
 

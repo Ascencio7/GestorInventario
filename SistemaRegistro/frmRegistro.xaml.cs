@@ -36,6 +36,52 @@ namespace GestorInventario.SistemaRegistro
             txtNombreUsuario.Focus();
         }
 
+        #region Colores de Botones
+        private void btnVolver_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnVolver.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnVolver_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnVolver.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnRegistrarse_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnRegistrarse.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+
+        }
+
+        private void btnRegistrarse_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnRegistrarse.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+
+        }
+
+        private void btnEditar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnEditar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnEditar_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnEditar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnCancelar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnCancelar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnCancelar_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnCancelar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+        #endregion
+
+
+
 
         #region Metodo Mostrar Usuarios
         void MostrarUsuarios()
@@ -59,7 +105,7 @@ namespace GestorInventario.SistemaRegistro
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ocurrió un error al mostrar los usuarios: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Ocurrió un error al mostrar los usuarios: " + ex.Message, "ATLAS CORP | ERROR AL MOSTRAR LOS USUARIOS", MessageBoxButton.OK, MessageBoxImage.Error);
                     LimpiarCampos();
                 }
                 finally
@@ -241,7 +287,7 @@ namespace GestorInventario.SistemaRegistro
             string resultado = EditarUsuario(usuarioID, nombreUsuario, correo, password, rolID, estadoID);
 
             // Mostrar el resultado
-            MessageBox.Show(resultado, "ATLAS CORP | USUARIO EDITADO", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show(resultado, "ATLAS CORP | USUARIO MODIFICADO", MessageBoxButton.OK, MessageBoxImage.Information);
             MostrarUsuarios();
             LimpiarCampos();
             
@@ -302,7 +348,7 @@ namespace GestorInventario.SistemaRegistro
         #region Botón Cancelar
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show("¿Desea cancelar la operación?", "ATLAS CORP | CANCELAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if(MessageBox.Show("¿Desea cancelar la operación?", "ATLAS CORP | CANCELAR LA OPERACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 LimpiarCampos();
                 MostrarUsuarios();
@@ -314,7 +360,7 @@ namespace GestorInventario.SistemaRegistro
         #region Botón de Volver
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("¿Desea regresar al menú principal de Administrador?", "ATLAS CORP | REGRESAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("¿Desea regresar al menú principal de Administrador?", "ATLAS CORP | REGRESAR AL MENÚ PRINCIPAL", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 frmInicioAdministrador inicioAdmin = new frmInicioAdministrador();
                 this.Hide();
@@ -322,53 +368,6 @@ namespace GestorInventario.SistemaRegistro
             }
         }
         #endregion
-
-
-
-        #region Colores de Botones
-        private void btnVolver_MouseEnter(object sender, MouseEventArgs e)
-        {
-            btnVolver.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-        }
-
-        private void btnVolver_MouseLeave(object sender, MouseEventArgs e)
-        {
-            btnVolver.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-
-        private void btnRegistrarse_MouseEnter(object sender, MouseEventArgs e)
-        {
-            btnRegistrarse.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-
-        }
-
-        private void btnRegistrarse_MouseLeave(object sender, MouseEventArgs e)
-        {
-            btnRegistrarse.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-
-        }
-
-        private void btnEditar_MouseEnter(object sender, MouseEventArgs e)
-        {
-            btnEditar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-        }
-
-        private void btnEditar_MouseLeave(object sender, MouseEventArgs e)
-        {
-            btnEditar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-
-        private void btnCancelar_MouseEnter(object sender, MouseEventArgs e)
-        {
-            btnCancelar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-        }
-
-        private void btnCancelar_MouseLeave(object sender, MouseEventArgs e)
-        {
-            btnCancelar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-        #endregion
-
 
 
     }

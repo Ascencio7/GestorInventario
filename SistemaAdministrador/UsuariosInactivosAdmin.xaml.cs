@@ -31,8 +31,42 @@ namespace GestorInventario.SistemaAdministrador
         }
 
 
-        #region Limpiar Campos
+        #region Colores del Boton
+        private void btnVolver_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnVolver.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
 
+        private void btnVolver_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnVolver.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnActivarUsuarioAdmin_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnActivarUsuarioAdmin.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnActivarUsuarioAdmin_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnActivarUsuarioAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnCancelarActivarUsuarioAdmin_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnCancelarActivarUsuarioAdmin.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnCancelarActivarUsuarioAdmin_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnCancelarActivarUsuarioAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        #endregion
+
+
+
+        #region Limpiar Campos
         void limpiarCampos()
         {
             txtIDUsuarioInactivoAdmin.Text = "";
@@ -42,7 +76,6 @@ namespace GestorInventario.SistemaAdministrador
             txtRolUsuarioInactivoAdmin.Text = "";
             txtEstadoUsuarioInactivoAdmin.Text = "";
         }
-
         #endregion
 
 
@@ -68,7 +101,7 @@ namespace GestorInventario.SistemaAdministrador
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ocurrió un error al mostrar los usuarios: " + ex.Message, "ATLAS CORP | ERROR AL CARGAR LOS DATOS", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Ocurrió un error al mostrar los usuarios: " + ex.Message, "ATLAS CORP | ERROR AL CARGAR LOS USUARIOS", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 finally
                 {
@@ -76,42 +109,6 @@ namespace GestorInventario.SistemaAdministrador
                 }
             }
         }
-        #endregion
-
-
-
-        #region Colores del Boton
-        private void btnVolver_MouseEnter(object sender, MouseEventArgs e)
-        {
-            btnVolver.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-        }
-
-        private void btnVolver_MouseLeave(object sender, MouseEventArgs e)
-        {
-            btnVolver.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-
-
-        private void btnActivarUsuarioAdmin_MouseEnter(object sender, MouseEventArgs e)
-        {
-            btnActivarUsuarioAdmin.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-        }
-
-        private void btnActivarUsuarioAdmin_MouseLeave(object sender, MouseEventArgs e)
-        {
-            btnActivarUsuarioAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-
-        private void btnCancelarActivarUsuarioAdmin_MouseEnter(object sender, MouseEventArgs e)
-        {
-            btnCancelarActivarUsuarioAdmin.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
-        }
-
-        private void btnCancelarActivarUsuarioAdmin_MouseLeave(object sender, MouseEventArgs e)
-        {
-            btnCancelarActivarUsuarioAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
-        }
-
         #endregion
 
 
@@ -147,7 +144,7 @@ namespace GestorInventario.SistemaAdministrador
                             }
                             else
                             {
-                                MessageBox.Show("No se encontraron resultados para el usuario seleccionado.", "ATLAS CORP  | SIN DATOS", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                MessageBox.Show("No se encontraron resultados para el usuario seleccionado.", "ATLAS CORP  | SIN DATOS QUE MOSTRAR", MessageBoxButton.OK, MessageBoxImage.Warning);
                                 limpiarCampos();
                             }
                         }
@@ -163,10 +160,11 @@ namespace GestorInventario.SistemaAdministrador
         #endregion
 
 
+
         #region Boton Volver
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("¿Desea regresar al menú principal de Administrador?", "ATLAS CORP | REGRESAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("¿Desea regresar al menú principal de Administrador?", "ATLAS CORP | REGRESAR AL MENÚ PRINCIPAL", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 frmInicioAdministrador formInicioAdmin = new frmInicioAdministrador();
                 this.Hide();
@@ -174,6 +172,7 @@ namespace GestorInventario.SistemaAdministrador
             }
         }
         #endregion
+
 
 
         #region Botón Activar Usuario
@@ -224,7 +223,6 @@ namespace GestorInventario.SistemaAdministrador
                 limpiarCampos();
             }
         }
-
         #endregion
 
 
@@ -232,7 +230,7 @@ namespace GestorInventario.SistemaAdministrador
         #region Botón Cancelar
         private void btnCancelarActivarUsuarioAdmin_Click(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show("¿Desea cancelar la activación del usuario seleccionado?", "ATLAS CORP | CANCELAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if(MessageBox.Show("¿Desea cancelar la activación del usuario seleccionado?", "ATLAS CORP | CANCELAR LA OPERACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 limpiarCampos();
                 MostrarUsuariosInactivos();

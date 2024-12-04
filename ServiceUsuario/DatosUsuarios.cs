@@ -61,7 +61,7 @@ namespace GestorInventario.ServiceUsuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al mostrar usuarios: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error al mostrar usuarios: " + ex.Message, "ATLAS CORP | ERROR AL CARGAR LOS USUARIOS ACTIVOS", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
@@ -113,7 +113,7 @@ namespace GestorInventario.ServiceUsuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al mostrar usuarios: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error al mostrar usuarios: " + ex.Message, "ATLAS CORP | ERROR AL CARGAR LOS USUARIOS INACTIVOS", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {

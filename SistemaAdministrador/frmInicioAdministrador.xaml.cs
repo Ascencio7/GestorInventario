@@ -152,7 +152,7 @@ namespace GestorInventario.SistemaAdministrador
         {
             if(MessageBox.Show("¿Desea salir del Sistema Administrador?", "ATLAS CORP | SISTEMA ADMINISTRADOR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Redireccionando al Inicio de Sesión", "ATLAS CORP", MessageBoxButton.OK,MessageBoxImage.Information);
+                MessageBox.Show("Redireccionando al Inicio de Sesión", "ATLAS CORP | INICIO DE SESIÓN", MessageBoxButton.OK,MessageBoxImage.Information);
                 Login formLogin = new Login();
                 this.Hide();
                 formLogin.Show();

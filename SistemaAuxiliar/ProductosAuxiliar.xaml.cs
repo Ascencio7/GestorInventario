@@ -118,7 +118,7 @@ namespace GestorInventario.SistemaAuxiliar
         #region Botón de Regresar
         private void btnRegresarAuxiliar_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("¿Desea regresar al menú principal del Auxiliar?", "ATLAS CORP | REGRESAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("¿Desea regresar al menú principal del Auxiliar?", "ATLAS CORP | REGRESAR AL MENÚ PRINCIPAL", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 frmInicioAuxiliar frmInicioAuxiliar = new frmInicioAuxiliar();
                 this.Hide();
@@ -162,7 +162,7 @@ namespace GestorInventario.SistemaAuxiliar
         #region Botón de Cancelar
         private void btnCancelarProductoAuxiliar_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("¿Desea cancelar la operación?", "ATLAS CORP | PRODUCTOS", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("¿Desea cancelar la operación?", "ATLAS CORP | CANCELAR LA OPERACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 limpiar();
                 MostrarLosProductosAuxiliar();
@@ -298,7 +298,7 @@ namespace GestorInventario.SistemaAuxiliar
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al editar producto: {ex.Message}", "ATLAS CORP | ERROR AL EDITAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error al editar producto: {ex.Message}", "ATLAS CORP | ERROR AL MODIFICAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         #endregion

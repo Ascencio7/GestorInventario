@@ -108,13 +108,14 @@ namespace GestorInventario.SistemaAuxiliar
         {
             if (MessageBox.Show("¿Desea regresar al Login?", "ATLAS CORP | SALIR AL LOGIN", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Redireccionando al Inicio de Sesión", "ATLAS CORP", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Redireccionando al Inicio de Sesión", "ATLAS CORP | INICIO DE SESIÓN", MessageBoxButton.OK, MessageBoxImage.Information);
                 Login formLogin = new Login();
                 this.Hide();
                 formLogin.Show();
             }
         }
         #endregion
+
 
 
         #region Boton Cerrar la Aplicación

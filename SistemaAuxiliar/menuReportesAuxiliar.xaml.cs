@@ -52,7 +52,7 @@ namespace GestorInventario.SistemaAuxiliar
         #region Boton Regresar
         private void btnRegresar_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("¿Desea regresar al menú del Auxiliar?", "ATLAS CORP | REGRESAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("¿Desea regresar al menú del Auxiliar?", "ATLAS CORP | REGRESAR AL MENÚ PRINCIPAL", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 frmInicioAuxiliar frmInicioAuxiliar = new frmInicioAuxiliar();
                 this.Hide();

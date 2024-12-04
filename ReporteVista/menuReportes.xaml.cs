@@ -75,7 +75,7 @@ namespace GestorInventario.ReporteVista
         #region Boton Regresar
         private void btnRegresar_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("¿Desea regresar al menú del Administrador?", "ATLAS CORP | REGRESAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("¿Desea regresar al menú del Administrador?", "ATLAS CORP | REGRESAR AL MENÚ", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 frmInicioAdministrador frmInicioAdministrador = new frmInicioAdministrador(); // Ventana principal
                 this.Hide();

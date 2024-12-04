@@ -36,104 +36,6 @@ namespace GestorInventario.SistemaAdministrador
         }
 
 
-        #region Limpiar los campos
-
-        void limpiar()
-        {
-            txtProductoIDAdmin.Text = "";
-            txtNombreProductoAdmin.Text = "";
-            txtPrecioProductoAdmin.Text = "";
-            txtCantidadProductoAdmin.Text = "";
-            txtNombreProveedorAdmin.Text = "";
-        }
-
-        #endregion
-
-
-        #region Mostrar Productos
-        void MostrarLosProductos()
-        {
-            using(SqlConnection conexion = ConexionDB.ObtenerCnx())
-            {
-                try
-                {
-                    ConexionDB.AbrirConexion(conexion);
-                    var productos = DatosProductos.MostrarProductos();
-                    gridProductosAdmin.ItemsSource = productos;
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Ocurrió un error al mostrar los productos: " + ex.Message, "ATLAS CORP | ERROR AL CARGAR LOS DATOS", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally 
-                { 
-                    ConexionDB.CerrarConexion(conexion);
-                }
-            }
-        }
-        #endregion
-
-
-        #region Boton Regresar
-        private void btnRegresarAdmin_Click(object sender, RoutedEventArgs e)
-        {
-            if(MessageBox.Show("¿Desea regresar al menú principal del Administrador?", "ATLAS CORP | REGRESAR", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-            {
-                frmInicioAdministrador formPrincipal = new frmInicioAdministrador();
-                this.Hide();
-                formPrincipal.Show();
-            }
-        }
-
-        #endregion
-
-
-        #region Evento del GRID
-        private void gridProductosAdmin_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ProductosModel productos = (ProductosModel)gridProductosAdmin.SelectedItem;
-            if (productos == null) return;
-
-            try
-            {
-                // Asignar los valores a los controles
-                txtProductoIDAdmin.Text = productos.ProductoID.ToString();
-                txtNombreProductoAdmin.Text = productos.Nombre_Producto;
-                txtPrecioProductoAdmin.Text = productos.Precio_Producto.ToString("F2");
-                txtCantidadProductoAdmin.Text = productos.Cantidad_Producto.ToString();
-                txtNombreProveedorAdmin.Text = productos.Proveedor.ToString();
-                
-                
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Error de formato: " + ex.Message, "ATLAS CORP | ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar los datos: " + ex.Message, "ATLAS CORP | ERROR AL CARGAR LOS DATOS", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-
-        #endregion
-
-
-        #region Boton de Cancelar
-        private void btnCancelarProductoAdmin_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBox.Show("¿Desea cancelar la operación?", "ATLAS CORP | PRODUCTOS", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-            {
-                limpiar();
-                MostrarLosProductos();
-            }
-        }
-
-
-        #endregion
-
-
-
         #region Colores Botones
         private void btnRegresarAdmin_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -175,6 +77,101 @@ namespace GestorInventario.SistemaAdministrador
             btnCancelarProductoAdmin.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
         }
 
+        #endregion
+
+
+
+        #region Limpiar los campos
+        void limpiar()
+        {
+            txtProductoIDAdmin.Text = "";
+            txtNombreProductoAdmin.Text = "";
+            txtPrecioProductoAdmin.Text = "";
+            txtCantidadProductoAdmin.Text = "";
+            txtNombreProveedorAdmin.Text = "";
+        }
+        #endregion
+
+
+
+        #region Mostrar Productos
+        void MostrarLosProductos()
+        {
+            using(SqlConnection conexion = ConexionDB.ObtenerCnx())
+            {
+                try
+                {
+                    ConexionDB.AbrirConexion(conexion);
+                    var productos = DatosProductos.MostrarProductos();
+                    gridProductosAdmin.ItemsSource = productos;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al mostrar los productos: " + ex.Message, "ATLAS CORP | ERROR AL CARGAR LOS DATOS", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                finally 
+                { 
+                    ConexionDB.CerrarConexion(conexion);
+                }
+            }
+        }
+        #endregion
+
+
+
+        #region Boton Regresar
+        private void btnRegresarAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            if(MessageBox.Show("¿Desea regresar al menú principal del Administrador?", "ATLAS CORP | REGRESANDO AL MENÚ PRINCIPAL", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                frmInicioAdministrador formPrincipal = new frmInicioAdministrador();
+                this.Hide();
+                formPrincipal.Show();
+            }
+        }
+        #endregion
+
+
+
+        #region Evento del GRID
+        private void gridProductosAdmin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ProductosModel productos = (ProductosModel)gridProductosAdmin.SelectedItem;
+            if (productos == null) return;
+
+            try
+            {
+                // Asignar los valores a los controles
+                txtProductoIDAdmin.Text = productos.ProductoID.ToString();
+                txtNombreProductoAdmin.Text = productos.Nombre_Producto;
+                txtPrecioProductoAdmin.Text = productos.Precio_Producto.ToString("F2");
+                txtCantidadProductoAdmin.Text = productos.Cantidad_Producto.ToString();
+                txtNombreProveedorAdmin.Text = productos.Proveedor.ToString();
+                
+                
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Error de formato: " + ex.Message, "ATLAS CORP | ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message, "ATLAS CORP | ERROR AL CARGAR LOS DATOS", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        #endregion
+
+
+
+        #region Boton de Cancelar
+        private void btnCancelarProductoAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("¿Desea cancelar la operación?", "ATLAS CORP | CANCELAR LA OPERACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                limpiar();
+                MostrarLosProductos();
+            }
+        }
         #endregion
 
 
@@ -276,7 +273,7 @@ namespace GestorInventario.SistemaAdministrador
                 catch (Exception ex)
                 {
                     // Captura de errores
-                    MessageBox.Show($"Error al editar el producto: {ex.Message}", "ATLAS CORP | ERROR AL EDITAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Error al editar el producto: {ex.Message}", "ATLAS CORP | ERROR AL MODIFICAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -304,7 +301,7 @@ namespace GestorInventario.SistemaAdministrador
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al editar producto: {ex.Message}", "ATLAS CORP | ERROR AL EDITAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error al editar producto: {ex.Message}", "ATLAS CORP | ERROR AL MODIFICAR EL PRODUCTO", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         #endregion
