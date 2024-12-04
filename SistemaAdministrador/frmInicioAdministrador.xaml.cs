@@ -171,8 +171,8 @@ namespace GestorInventario.SistemaAdministrador
                 Application.Current.Shutdown();
             }
         }
-        #endregion
 
+        #endregion
 
     }
 }

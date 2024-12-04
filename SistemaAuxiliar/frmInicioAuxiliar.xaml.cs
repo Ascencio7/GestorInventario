@@ -22,6 +22,7 @@ using GestorInventario.ModeloProducto;
 using GestorInventario.ModeloProveedor;
 using GestorInventario.ServiceUsuario;
 using GestorInventario.ServiceProducto;
+using GestorInventario.ReporteVista;
 
 
 namespace GestorInventario.SistemaAuxiliar
@@ -39,14 +40,24 @@ namespace GestorInventario.SistemaAuxiliar
 
 
         #region Colores Botones
-        private void btnSalirAxuliar_MouseEnter(object sender, MouseEventArgs e)
+        private void btnReportesAuxiliar_MouseEnter(object sender, MouseEventArgs e)
         {
-            btnSalirAxuliar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+            btnReportesAuxiliar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
         }
 
-        private void btnSalirAxuliar_MouseLeave(object sender, MouseEventArgs e)
+        private void btnReportesAuxiliar_MouseLeave(object sender, MouseEventArgs e)
         {
-            btnSalirAxuliar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+            btnReportesAuxiliar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnSalirAuxiliar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnSalirAuxiliar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnSalirAuxiliar_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnSalirAuxiliar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
         }
 
         private void btnCerrarAplicacionAuxiliar_MouseEnter(object sender, MouseEventArgs e)
@@ -57,6 +68,16 @@ namespace GestorInventario.SistemaAuxiliar
         private void btnCerrarAplicacionAuxiliar_MouseLeave(object sender, MouseEventArgs e)
         {
             btnCerrarAplicacionAuxiliar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
+        }
+
+        private void btnGestionProductosAuxiliar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnGestionProductosAuxiliar.Background = new SolidColorBrush(Color.FromRgb(41, 16, 153));
+        }
+
+        private void btnGestionProductosAuxiliar_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnGestionProductosAuxiliar.Background = new SolidColorBrush(Color.FromRgb(5, 135, 137)); // Color original
         }
         #endregion
 
@@ -71,10 +92,20 @@ namespace GestorInventario.SistemaAuxiliar
 
 
 
-        #region Boton Salir al Login
-        private void btnSalirAxuliar_Click(object sender, RoutedEventArgs e)
+        #region Botón de Productos
+        private void btnGestionProductosAuxiliar_Click(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show("¿Desea regresar al Login?", "ATLAS CORP | SALIR AL LOGIN", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            ProductosAdmin formProducto = new ProductosAdmin();
+            formProducto.Show();
+        }
+        #endregion
+
+
+
+        #region Boton Salir al Login
+        private void btnSalirAuxiliar_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("¿Desea regresar al Login?", "ATLAS CORP | SALIR AL LOGIN", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 MessageBox.Show("Redireccionando al Inicio de Sesión", "ATLAS CORP", MessageBoxButton.OK, MessageBoxImage.Information);
                 Login formLogin = new Login();
@@ -94,9 +125,18 @@ namespace GestorInventario.SistemaAuxiliar
                 Application.Current.Shutdown();
             }
         }
-
         #endregion
 
+
+
+        #region Botón de Reportes
+        private void btnReportesAuxiliar_Click(object sender, RoutedEventArgs e)
+        {
+            menuReportes formReportes = new menuReportes();
+            formReportes.Show();
+        }
+
+        #endregion
 
 
     }
