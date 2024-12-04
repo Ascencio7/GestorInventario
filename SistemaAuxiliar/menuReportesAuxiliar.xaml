@@ -1,0 +1,13 @@
+﻿<Window x:Class="GestorInventario.SistemaAuxiliar.menuReportesAuxiliar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorInventario.SistemaAuxiliar"
+        mc:Ignorable="d"
+        Title="Reportes" Height="450" Width="824" Icon="/ReporteVista/inventario.png" ResizeMode="NoResize" FontFamily="Times New Roman" WindowStartupLocation="CenterScreen" Background="LightGray">
+    <Grid Background="White" Cursor="" HorizontalAlignment="Left" Width="785">
+        <Button x:Name="btnReporteProductosAuxiliar" Background="#FF058789" Content="Productos" HorizontalAlignment="Center" Height="62" Margin="0,200,0,0" VerticalAlignment="Top" Width="182" FontFamily="Times New Roman" FontSize="15" Click="btnReporteProductosAuxiliar_Click" MouseEnter="btnReporteProductosAuxiliar_MouseEnter" MouseLeave="btnReporteProductosAuxiliar_MouseLeave"/>
+        <Button x:Name="btnRegresar" Content="Regresar" Background="#FF058789" HorizontalAlignment="Left" Height="50" Margin="10,0,0,359" VerticalAlignment="Bottom" Width="131" FontFamily="Times New Roman" FontSize="15" Click="btnRegresar_Click" MouseEnter="btnRegresar_MouseEnter" MouseLeave="btnRegresar_MouseLeave"/>
+    </Grid>
+</Window>

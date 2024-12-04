@@ -95,8 +95,9 @@ namespace GestorInventario.SistemaAuxiliar
         #region Botón de Productos
         private void btnGestionProductosAuxiliar_Click(object sender, RoutedEventArgs e)
         {
-            ProductosAdmin formProducto = new ProductosAdmin();
-            formProducto.Show();
+            ProductosAuxiliar formProductosAuxiliar = new ProductosAuxiliar();
+            this.Hide();
+            formProductosAuxiliar.Show();
         }
         #endregion
 
@@ -132,10 +133,10 @@ namespace GestorInventario.SistemaAuxiliar
         #region Botón de Reportes
         private void btnReportesAuxiliar_Click(object sender, RoutedEventArgs e)
         {
-            menuReportes formReportes = new menuReportes();
-            formReportes.Show();
+            menuReportesAuxiliar formMenuReportesAuxiliar = new menuReportesAuxiliar();
+            this.Hide();
+            formMenuReportesAuxiliar.Show();
         }
-
         #endregion
 
 

@@ -1,0 +1,28 @@
+﻿<Window x:Class="GestorInventario.SistemaAuxiliar.ProductosAuxiliar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorInventario.SistemaAuxiliar"
+        mc:Ignorable="d"
+        Title="ATLAS CORP | PRODUCTOS " ResizeMode="NoResize" Background="LightGray" Height="679" Width="1052" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
+    <Grid  Background="White" Cursor="" HorizontalAlignment="Left" Width="982">
+        <Button x:Name="btnRegresarAuxiliar" Content="Regresar" Margin="13,10,818,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" Click="btnRegresarAuxiliar_Click" MouseEnter="btnRegresarAuxiliar_MouseEnter" MouseLeave="btnRegresarAuxiliar_MouseLeave"/>
+        <Label Content="ID Producto:" HorizontalAlignment="Left" Margin="150,171,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <Label Content="Producto:" HorizontalAlignment="Center" Margin="0,171,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <Label Content="Precio:" HorizontalAlignment="Left" Margin="743,163,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="158,274,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <Label Content="Proveedor:" HorizontalAlignment="Left" Margin="450,274,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+        <TextBlock x:Name="txtProductoIDAuxiliar" HorizontalAlignment="Left" Height="29" Margin="161,199,0,0" TextWrapping="Wrap" TextAlignment="Center" Background="LightGray" VerticalAlignment="Top" Width="64" FontFamily="Times New Roman" FontSize="15"/>
+        <TextBox x:Name="txtNombreProductoAuxiliar" Cursor="Hand" TextAlignment="Center" HorizontalAlignment="Center" Height="31" Margin="0,193,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Width="278" FontFamily="Times New Roman" FontSize="15" KeyUp="txtNombreProductoAuxiliar_KeyUp"/>
+        <TextBox x:Name="txtPrecioProductoAuxiliar" Cursor="Hand" HorizontalAlignment="Left" Height="30" Margin="716,194,0,0" TextWrapping="Wrap" Background="LightGray" TextAlignment="Center" VerticalAlignment="Top" Width="104" FontFamily="Times New Roman" FontSize="15" KeyUp="txtPrecioProductoAuxiliar_KeyUp"/>
+        <TextBox x:Name="txtCantidadProductoAuxiliar" Cursor="Hand" HorizontalAlignment="Left" Height="31" Margin="125,304,0,0" TextWrapping="Wrap" Background="LightGray" TextAlignment="Center" VerticalAlignment="Top" Width="133" FontFamily="Times New Roman" FontSize="15" KeyUp="txtCantidadProductoAuxiliar_KeyUp"/>
+        <TextBox x:Name="txtNombreProveedorAuxiliar" Cursor="Hand" TextAlignment="Center" HorizontalAlignment="Center" Height="31" Margin="0,304,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Width="278" FontFamily="Times New Roman" FontSize="15" KeyUp="txtNombreProveedorAuxiliar_KeyUp"/>
+        <Button x:Name="btnRegistrarProductoAuxiliar" Content="Registrar Producto" Margin="868,245,-37,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" MouseEnter="btnRegistrarProductoAuxiliar_MouseEnter" MouseLeave="btnRegistrarProductoAuxiliar_MouseLeave" Click="btnRegistrarProductoAuxiliar_Click"/>
+        <Button x:Name="btnEditarProductoAuxiliar" Content="Editar Producto" Margin="868,288,-37,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" MouseEnter="btnEditarProductoAuxiliar_MouseEnter" MouseLeave="btnEditarProductoAuxiliar_MouseLeave" Click="btnEditarProductoAuxiliar_Click"/>
+        <Button x:Name="btnCancelarProductoAuxiliar" Content="Cancelar" Margin="868,332,-37,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" Click="btnCancelarProductoAuxiliar_Click" MouseEnter="btnCancelarProductoAuxiliar_MouseEnter" MouseLeave="btnCancelarProductoAuxiliar_MouseLeave" />
+        <Label Content="           REGISTRO Y MODIFICACIÓN&#xA;&#x9;      &#x9;  DE&#xA;           &#x9;         PRODUCTOS" FontFamily="Times New Roman" FontSize="20" HorizontalAlignment="Left" Margin="305,51,0,0" VerticalAlignment="Top" Height="118" Width="376"/>
+        <DataGrid x:Name="gridProductosAuxiliar" HorizontalAlignment="Center" Height="240" Margin="0,403,0,0" VerticalAlignment="Top" Width="932" IsReadOnly="True" Cursor="Hand" SelectionChanged="gridProductosAuxiliar_SelectionChanged"/>
+
+    </Grid>
+</Window>

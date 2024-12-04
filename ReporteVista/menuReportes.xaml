@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorInventario.ReporteVista"
         mc:Ignorable="d"
-        Title="Reportes" Height="450" Width="824" Icon="/ReporteVista/inventario.png" ResizeMode="NoResize" FontFamily="Times New Roman" WindowStartupLocation="CenterOwner" Background="LightGray">
+        Title="Reportes" Height="450" Width="824" Icon="/ReporteVista/inventario.png" ResizeMode="NoResize" FontFamily="Times New Roman" WindowStartupLocation="CenterScreen" Background="LightGray">
     <Grid Background="White" Cursor="" HorizontalAlignment="Left" Width="785">
         <Button x:Name="btnReporteUsuariosActivosAdmin" Background="#FF058789" Content="Usuarios Activos" HorizontalAlignment="Left" Height="62" Margin="155,181,0,0" VerticalAlignment="Top" Width="182" Click="btnReporteUsuariosActivosAdmin_Click" MouseEnter="btnReporteUsuariosActivosAdmin_MouseEnter" MouseLeave="btnReporteUsuariosActivosAdmin_MouseLeave" FontFamily="Times New Roman" FontSize="15"/>
         <Button x:Name="btnReporteUsuariosInactivosAdmin" Background="#FF058789" Content="Usuarios Inactivos" HorizontalAlignment="Left" Height="62" Margin="392,181,0,0" VerticalAlignment="Top" Width="182" Click="btnReporteUsuariosInactivosAdmin_Click" MouseEnter="btnReporteUsuariosInactivosAdmin_MouseEnter" MouseLeave="btnReporteUsuariosInactivosAdmin_MouseLeave" FontFamily="Times New Roman" FontSize="15"/>
