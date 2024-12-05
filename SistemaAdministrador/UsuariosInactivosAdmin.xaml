@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorInventario.SistemaAdministrador"
         mc:Ignorable="d"
-        Title="ATLAS CORP | USUARIOS INACTIVOS " ResizeMode="NoResize" Background="LightGray" Height="679" Width="1052" FontFamily="Times New Roman" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
+        Title="ATLAS CORP | USUARIOS INACTIVOS " ResizeMode="NoResize" WindowStyle="None" Background="LightGray" Height="679" Width="1052" FontFamily="Times New Roman" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
     <Grid Background="White" Margin="0,0,47,0" Cursor="">
         <Label Content="Usuarios Inactivos" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Times New Roman" Width="241" Height="39"/>
         <DataGrid x:Name="gridUsuariosInactivosAdmin" Background="white" HorizontalAlignment="Center" IsReadOnly="True" Cursor="Hand" FontFamily="Times New Roman" Height="351" Margin="0,302,0,0" VerticalAlignment="Top" Width="952" SelectionChanged="gridUsuariosInactivosAdmin_SelectionChanged"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorInventario.SistemaRegistro"
         mc:Ignorable="d"
-        Title="ATLAS CORP | REGISTRO" ResizeMode="NoResize" Background="LightGray" Height="679" Width="1052" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
+        Title="ATLAS CORP | REGISTRO" ResizeMode="NoResize" WindowStyle="None" Background="LightGray" Height="679" Width="1052" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
 
     <Grid Background="White" Margin="0,0,47,0" Cursor="">
         <Label Content="Nombre Usuario:" HorizontalAlignment="Left" Margin="37,120,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="12"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorInventario.SistemaAuxiliar"
         mc:Ignorable="d"
-        Title="ATLAS CORP | PRODUCTOS " ResizeMode="NoResize" Background="LightGray" Height="679" Width="1052" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
+        Title="ATLAS CORP | PRODUCTOS " WindowStyle="None" ResizeMode="NoResize" Background="LightGray" Height="679" Width="1052" FontFamily="Verdana" WindowStartupLocation="CenterScreen" Icon="/SistemaRegistro/inventario.png">
     <Grid  Background="White" Cursor="" HorizontalAlignment="Left" Width="982">
         <Button x:Name="btnRegresarAuxiliar" Content="Regresar" Margin="13,10,818,0" Background="#FF058789" FontFamily="Times New Roman" FontWeight="Bold" FontSize="10" Height="32" VerticalAlignment="Top" Click="btnRegresarAuxiliar_Click" MouseEnter="btnRegresarAuxiliar_MouseEnter" MouseLeave="btnRegresarAuxiliar_MouseLeave"/>
         <Label Content="ID Producto:" HorizontalAlignment="Left" Margin="150,171,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorInventario.SistemaAuxiliar"
         mc:Ignorable="d"
-        Title="Sistema Administrador" FontFamily="Times New Roman" Background="Black" Height="450" Width="800" WindowState="Maximized" Icon="/SistemaAdministrador/inventario.png">
+        Title="Sistema Administrador" WindowStyle="None" FontFamily="Times New Roman" Background="Black" Height="450" Width="800" WindowState="Maximized" Icon="/SistemaAdministrador/inventario.png">
     <Grid>
         <!-- Define two columns -->
         <Grid.ColumnDefinitions>
